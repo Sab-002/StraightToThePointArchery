@@ -9,6 +9,48 @@
 
     <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Initial hidden state */
+        .fade-up,
+        .fade-left,
+        .fade-right,
+        .zoom-in {
+            opacity: 0;
+            transition: all 0.9s ease;
+        }
+
+        .fade-up {
+            transform: translateY(40px);
+        }
+
+        .fade-left {
+            transform: translateX(-40px);
+        }
+
+        .fade-right {
+            transform: translateX(40px);
+        }
+
+        .zoom-in {
+            transform: scale(0.9);
+        }
+
+        /* Visible state */
+        .show-animate {
+            opacity: 1;
+            transform: translate(0, 0) scale(1);
+        }
+
+        /* Hover enhancement */
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+    </style>
 </head>
 <body>
 
@@ -75,6 +117,24 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const animatedItems = document.querySelectorAll(
+                ".fade-up, .fade-left, .fade-right, .zoom-in"
+            );
 
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("show-animate");
+                    }
+                });
+            }, {
+                threshold: 0.15
+            });
+
+            animatedItems.forEach((item) => observer.observe(item));
+        });
+    </script>
 </body>
 </html>

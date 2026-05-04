@@ -7,8 +7,8 @@
 <!-- ABOUT HERO -->
 <section class="py-5 bg-dark text-white text-center">
     <div class="container">
-        <h1 class="display-4 fw-bold">About Us</h1>
-        <p class="lead mt-3">
+        <h1 class="display-4 fw-bold fade-up">About Us</h1>
+        <p class="lead mt-3 fade-up">
             Learn more about our mission, facilities, and dedication to archery education.
         </p>
     </div>
@@ -18,7 +18,7 @@
 <section class="py-5">
     <div class="container">
 
-        <div class="mb-5">
+        <div class="mb-5 fade-left">
             <h2 class="fw-bold mb-3">Who We Are</h2>
             <p>
                 Straight to the Point Archery is a non-profit archery education center founded in 2005.
@@ -31,7 +31,7 @@
             </p>
         </div>
 
-        <div class="mb-5">
+        <div class="mb-5 fade-right">
             <h2 class="fw-bold mb-3">Our Facilities</h2>
             <p>
                 Our indoor training facility includes 28 shooting lanes, private coaching rooms,
@@ -40,9 +40,9 @@
             </p>
         </div>
 
-        <div class="mb-5">
+        <div class="mb-5 fade-up">
             <h2 class="fw-bold mb-3">Programs Offered</h2>
-            <ul class="list-group list-group-flush">
+            <ul class="list-group list-group-flush zoom-in">
                 <li class="list-group-item">Beginner to Advanced Group Classes</li>
                 <li class="list-group-item">Private Coaching Sessions</li>
                 <li class="list-group-item">Corporate and Birthday Events</li>
@@ -51,7 +51,7 @@
             </ul>
         </div>
 
-        <div>
+        <div class="mb-5 fade-left">
             <h2 class="fw-bold mb-3">Our Commitment</h2>
             <p>
                 We are committed to creating a positive and inclusive learning environment.

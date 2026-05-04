@@ -6,9 +6,92 @@
     <title>Admin Panel - {{ config('app.name') }}</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        .sidebar { width: 250px; min-height: 100vh; }
-        .nav-link:hover { background: #343a40; }
-        .active-link { background: #0d6efd !important; border-radius: 5px; }
+        .sidebar {
+            width: 250px;
+            min-height: 100vh;
+            animation: slideInLeft 0.15s linear;
+        }
+
+        .alert {
+            animation: fadeDown 0.15s linear;
+        }
+
+        .nav-link {
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            margin-bottom: 5px;
+        }
+
+        .nav-link:hover {
+            background: #343a40;
+            transform: translateX(6px);
+        }
+
+        .active-link {
+            background: #0d6efd !important;
+            border-radius: 8px;
+            box-shadow: 0 8px 20px rgba(13, 110, 253, 0.3);
+        }
+
+        .content-animate {
+            animation: fadeUp 0.8s ease;
+        }
+        
+        .card,
+        .table,
+        .dashboard-box {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover,
+        .dashboard-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-item {
+            opacity: 1;
+            transform: translateY(0);
+            transition: transform 0.08s ease-out, box-shadow 0.2s ease;
+        }
+
+        .fade-item.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
 <body>
@@ -60,7 +143,7 @@
     </div>
 
     <!-- Main Content -->
-    <div class="p-4 flex-grow-1 bg-light">
+    <div class="p-4 flex-grow-1 bg-light content-animate">
         @if(session('success'))
             <div class="alert alert-success border-0 shadow-sm mb-4">{{ session('success') }}</div>
         @endif
@@ -75,6 +158,14 @@
 
 </div>
 
-<script src="https://jsdelivr.net"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const items = document.querySelectorAll(".card, .table, .dashboard-box");
+
+            items.forEach((item) => {
+                item.classList.add("fade-item");
+            });
+        });
+    </script>
 </body>
 </html>

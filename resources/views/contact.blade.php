@@ -20,7 +20,7 @@
         <div class="row g-5">
 
             <!-- CONTACT DETAILS -->
-            <div class="col-md-5">
+            <div class="col-md-5 fade-left">
                 <h2 class="fw-bold mb-4">Get In Touch</h2>
                 <p><strong>Address:</strong> 528 Nock Point Ln, Tacoma, WA 98412</p>
                 <p><strong>Email:</strong> archery-education@example.com</p>
@@ -28,7 +28,7 @@
             </div>
 
             <!-- CONTACT FORM -->
-            <div class="col-md-7">
+            <div class="col-md-7 fade-right">
                 <div class="card shadow border-0">
                     <div class="card-body p-4">
 

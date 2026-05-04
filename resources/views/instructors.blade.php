@@ -20,8 +20,8 @@
         <div class="row g-4">
 
             @foreach($instructors as $instructor)
-            <div class="col-md-4">
-                <div class="card shadow border-0 h-100 text-center">
+            <div class="col-md-4 zoom-in">
+                    <div class="card shadow border-0 h-100 text-center">
 
                     @if($instructor->image)
                         <img src="{{ asset($instructor->image) }}"

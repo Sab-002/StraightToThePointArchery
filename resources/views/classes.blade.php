@@ -20,7 +20,7 @@
         <div class="row g-4">
 
             @foreach($classes as $class)
-            <div class="col-md-4">
+            <div class="col-md-4 fade-up">
                 <div class="card shadow border-0 h-100">
                     <div class="card-body">
                         <h3 class="fw-bold">{{ $class->code }}</h3>
